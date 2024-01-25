@@ -4,6 +4,7 @@ import {
   AfterUpdate,
   Column,
   Entity,
+  Exclusion,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -11,8 +12,10 @@ import {
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
+
   @Column()
   email: string;
+
   @Column()
   password: string;
 
