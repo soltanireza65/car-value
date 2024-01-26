@@ -33,6 +33,7 @@ export class AuthService {
       email,
       password: hashedPassword,
     });
+    return user;
   }
   async singin({ email, password }: { email: string; password: string }) {
     const [user] = await this.usersService.find(email);
