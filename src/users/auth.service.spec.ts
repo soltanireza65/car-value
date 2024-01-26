@@ -62,7 +62,6 @@ describe('AuthService', () => {
       await service.signup({ email: 'asdf@asdf.com', password: 'asdf' });
       await service.signup({ email: 'asdf@asdf.com', password: 'asdf' });
     } catch (e) {
-      console.log('🚀 ~ it ~ e:', e.message);
       expect(e.message).toBe("Email in use")
     }
   });
@@ -72,7 +71,6 @@ describe('AuthService', () => {
     try {
       await service.signin({ email: 'asdfsdvsv@asdfsdvsv.com', password: 'asdfsdvsv' });
     } catch (e) {
-      console.log('🚀 ~ it ~ e:', e.message);
       expect(e.message).toBe("User fot found")
     }
   });
