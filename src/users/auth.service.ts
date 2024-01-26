@@ -18,7 +18,7 @@ const scrypt = promisify(_scrypt);
 export class AuthService {
   constructor(private readonly usersService: UsersService) {}
 
-  async singup({ email, password }: { email: string; password: string }) {
+  async signup({ email, password }: { email: string; password: string }) {
     const users = await this.usersService.find(email);
     if (users.length) {
       throw new BadRequestException('Email in use');
@@ -35,7 +35,7 @@ export class AuthService {
     });
     return user;
   }
-  async singin({ email, password }: { email: string; password: string }) {
+  async signin({ email, password }: { email: string; password: string }) {
     const [user] = await this.usersService.find(email);
     if (!user) {
       throw new NotFoundException('User fot found');
